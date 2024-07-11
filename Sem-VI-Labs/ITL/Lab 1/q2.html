@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Calculator</title>
+        <script type = "text/javascript" src = "jquery-3.7.1.min.js"></script>
+        <script type = "text/javascript" language = "javascript">
+            $(document).ready(function(){
+                $('.bn').click(function(){
+                    num1 = parseInt($('#num1').val());
+                    num2 = parseInt($('#num2').val());
+                    if(Number.isNaN(num1)||Number.isNaN(num2)){
+                        alert('Please Enter numbers');
+                    }
+                });
+                $('#add').click(function(){
+                    ans = num1 + num2;
+                    $('#ans').text('Answer is  ' + ans);
+                });
+                $('#minus').click(function(){
+                    ans = num1 - num2;
+                    $('#ans').text('Answer is ' + ans);
+                });
+                $('#multiply').click(function(){
+                    ans = num1 * num2;
+                    $('#ans').text('Answer is ' + ans);
+                });
+                $('#divide').click(function(){
+                    ans = num1 / num2;
+                    $('#ans').text('Answer is ' + ans);
+                });
+            });
+
+        </script>
+        <style>
+            .bn{
+                width : 50px;
+                height : 50px;
+                font-size : 25px;
+            }
+            #minus{
+                position : relative;
+                left : 20px;
+            }
+            #divide{
+                position : relative;
+                left : 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <label for = "num1">First Number:</label>
+        <input type = "text" id = "num1"><br><br>
+        <label for = "num2">Second Number:</label>
+        <input type = "text" id = "num2"><br><br>
+        <button type = "button" class = "bn" id = "add">+</button>
+        <button type = "button" class = "bn" id = "minus">-</button><br><br>
+        <button type = "button" class = "bn" id = "multiply">*</button>
+        <button type = "button" class = "bn" id = "divide">/</button>
+        <br><br>
+        <div id = "ans"></div>
+    </body>
+</html>

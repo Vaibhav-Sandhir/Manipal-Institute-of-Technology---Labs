@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>Animate</title>
+		<script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+		<script type="text/javascript" language = "javascript">
+			$(document).ready(function(){
+				$('#btnSubmit').click(function(){
+					console.log('hello');
+					$('#div1').animate({left:'150px'});
+				});
+			});
+		</script>	
+	</head>
+	<body>
+		<input id="btnSubmit" type="submit" value="submit"/>
+		<div id="div1" style="position: relative;">Hello</div>
+	</body>	
+</html>

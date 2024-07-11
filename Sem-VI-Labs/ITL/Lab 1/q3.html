@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>Birthday Card</title>
+        <script type = "text/javascript" src = "jquery-3.7.1.min.js"></script>
+        <script type = "text/javascript" language = "javascript">
+            $(document).ready(function(){
+                $('#btnSubmit').click(function(){
+                    color = $('#color').find("option:selected").val();
+                    font = $('#font').find("option:selected").val();
+                    size = $('#text').val() + "px";
+                    border = $('input[name = "border"]:checked').val();
+                    message = $('#message').val();
+
+                    $('#right').text(message);
+                    $('#right').css({
+                        "background-color" : color,
+                        "font-family" : font,
+                        "font-size" : size,
+                        "text-align" : "center",
+                        "border-style" : border
+                    });
+                    if($('#picture').is(':checked')){
+                        $('#cake').attr("src", "cake.jpg");
+                    }
+                    else{
+                        $('#cake').attr("src", "");
+                    }
+                });
+            });
+        </script>
+        <style>
+            #parent{
+                width : 100%;
+            }
+            #left{
+                width : 50%;
+                float: left;
+            }
+            #right{
+                margin-left : 50%;
+                height : 100%;
+            }
+            #cake{
+            position: absolute;  
+            top: 40%;            
+            left: 67%;             
+            }
+            .option{
+                width : 120px;
+                height : 40px;
+            }
+            #message{
+                height : 80px;
+                width : 200px;
+                text-align: left;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id = "parent">
+            <div id = "left">
+                <label for = "color">Choose a background color:</label><br>
+                <select name = "color" class = "option" id = "color">
+                    <option value = "red">Red</option>
+                    <option value = "yellow">Yellow</option>
+                    <option value = "pink">Pink</option>
+                </select><br><br>
+                <label for = "font">Choose a font:</label><br>
+                <select name = "font" class = "option" id = "font">
+                    <option value = "Arial">Arial</option>
+                    <option value = "Georgia">Georgia</option>
+                </select><br><br>
+                <label for = "text">Enter a font size:</label><br>
+                <input type = "text" id = "text" class = "option"><br><br>
+                Choose a border style:<br><br>
+                <input type = "radio" id = "none" name = "border" value = "none">
+                <label for = "none">None</label><br>
+                <input type = "radio" id = "double" name = "border" value = "double">
+                <label for = "double">Double</label><br>
+                <input type = "radio" id = "solid" name = "border" value = "solid">
+                <label for = "solid">Solid</label><br><br>
+                <input type = "checkbox" name = "picture" id = "picture">
+                <label for = "picture">Add Default Picture</label><br><br>
+                <label for = "message">Enter a Greeting Message:</label><br>
+                <input type = "text" id = "message" name = "message">
+
+                <br><br>
+                <input id="btnSubmit" type = "submit" class = "option" value = "Update">
+                
+            </div>
+            <img id = "cake" alt = ""/> 
+            <div id = "right">
+            </div>
+        </div>
+    </body>
+</html>

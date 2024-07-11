@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>Birthday Card</title>
+        <script src = 'jq.js'></script>
+        <script>
+            $(document).ready(function(){
+                $('#update').click(function(){
+                    var bgcolor = $('#bgcolor').val();
+                    var font = $('#font').val();
+                    var size = $('#size').val();
+                    var border = $('input[name = "border"]:checked').val();
+                    var message = $('#message').val();
+                    $('#right').css({'background-color' : bgcolor});
+                    $('#right').css({'font-family' : font});
+                    $('#right').css({'font-size' : size});
+                    $('#right').css({'border' : border});
+                    $('#right').text(message);
+                    $('#right').css({'text-align' : 'center'});
+                    if($('#picture').is(':checked')){
+                        $('#cake').attr('src', 'cake.jpg');
+                    }
+                    else{
+                        $('#cake').attr('src', '');
+                    }
+                });
+            });
+        </script>
+        <style>
+            #left{
+                width : 50%;
+                float: left;
+                height : 100%;
+            }
+            #right{
+                margin-left : 50%;
+                height : 100%;
+            }
+            #cake{
+                position : absolute;
+                top : 40%;
+                left : 67%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = 'parent'>
+            <div id = 'left'>
+                Choose a background colour:<br>
+                <select id = 'bgcolor'>
+                    <option value = 'yellow'>Yellow</option>
+                    <option value = 'red'>Red</option>
+                    <option value = 'pink'>Pink</option>
+                </select><br><br>
+                Choose a font:<br>
+                <select id = 'font'>
+                    <option value = 'Arial'>Arial</option>
+                    <option value = 'Georgia'>Georgia</option>
+                </select><br><br>
+                Specify a numeric font size:
+                <input id = 'size' type = 'number'><br><br>
+                Choose a border style:<br>
+                <input type = 'radio' name = 'border' value = 'none'>None<br>
+                <input type = 'radio' name = 'border' value = 'double'>Double<br>
+                <input type = 'radio' name = 'border' value = 'solid'>Solid<br><br>
+                <input id = 'picture' type = 'checkbox'>Add a default picture<br><br>
+                Add a Birthday Message
+                <input id = 'message' type = 'text'>
+                <br><br>
+                <button id = 'update' type = 'submit'>Update</button>
+            </div>
+            <img id = 'cake' src = ''/>
+            <div id = 'right'>
+            </div>
+        </div>
+    </body>
+</html>

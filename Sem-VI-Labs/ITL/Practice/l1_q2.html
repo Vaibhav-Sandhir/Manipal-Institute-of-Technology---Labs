@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Arithmetic Calculator</title>
+        <script src = 'jq.js'></script>
+        <script>
+            $(document).ready(function(){
+                var num1 = 0;
+                var num2 = 0;
+                $('.bn').click(function(){
+                    num1 = $('#num1').val();
+                    num2 = $('#num2').val();
+                    num1 = parseInt(num1);
+                    num2 = parseInt(num2);
+                });
+                $('#plus').click(function(){
+                    result = num1 + num2;
+                    $('#div1').text(result);
+                });
+                $('#minus').click(function(){
+                    result = num1 - num2;
+                    $('#div1').text(result);
+                });
+                $('#divide').click(function(){
+                    result = num1 / num2;
+                    $('#div1').text(result);
+                });
+                $('#multiply').click(function(){
+                    result = num1 * num2;
+                    $('#div1').text(result);
+                });
+            });
+        </script>
+        <style>
+            .bn{
+                width : 45px;
+                height : 45px;
+                font-size : 20px;
+            }
+        </style>
+    </head>
+    <body>
+        Enter first number<br>
+        <input id = 'num1' type = 'number'><br><br>
+        Enter second number<br>
+        <input id = 'num2' type = 'number'><br><br>
+        <button class = 'bn' id = 'plus' type = 'button'>+</button>
+        <button class = 'bn' id = 'minus' type = 'button'>-</button><br><br>
+        <button class = 'bn' id = 'divide' type = 'button'>/</button>
+        <button class = 'bn' id = 'multiply' type = 'button'>*</button>
+        <br><br>
+        <div id = 'div1'></div>
+    </body>
+</html>

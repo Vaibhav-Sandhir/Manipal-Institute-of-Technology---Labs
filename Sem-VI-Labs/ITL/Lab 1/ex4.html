@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Events</title>
+		<script type = "text/javascript" src = "jquery-3.7.1.min.js">
+		</script>
+		<script type = "text/javascript" language = "javascript">
+			$(document).ready(function(){
+				$('#button').click(function(){
+					alert("Stop");
+					$('#div1').css({'background-color' : "pink"});
+				});
+				$('#div1').hover(
+					function(){
+						$(this).css({"background-color" : "red"});
+					},
+					function(){
+						$(this).css({"background-color" : "blue"});
+					}
+				);
+			});
+		</script>	
+	</head>
+	<body>
+		<div id = "mydiv">
+			Click to see a dialouge box
+			<input type = "button" id = "button">
+		</div>
+		<div id = "div1">
+			Hello
+		</div>		
+	</body>	
+</html>

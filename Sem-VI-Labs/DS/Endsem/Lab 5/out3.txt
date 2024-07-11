@@ -1,0 +1,2 @@
+Deaths	90844560
+Recovered	1304714492

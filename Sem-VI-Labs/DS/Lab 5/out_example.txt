@@ -1,0 +1,40 @@
+Atlanta	1
+Aurora	1
+Austin	1
+Birmingham	1
+Boston	1
+Buffalo	2
+Chicago	2
+Cincinnati	4
+Corpus Christi	1
+Dallas	1
+Fremont	1
+Gilbert	1
+Glendale	1
+Indianapolis	2
+Irvine	1
+Jersey City	1
+Las Vegas	1
+Los	1
+Louisville	1
+Lubbock	1
+Memphis	1
+Mesa	1
+Miami	2
+Newark	1
+New York	1
+Pittsburgh	1
+Plano	1
+Raleigh	1
+Riverside	1
+Rochester	3
+San Bernardino	1
+San Francisco	1
+San Jose	1
+Santa Ana	2
+Scottsdale	1
+Stockton	1
+Tampa	1
+Tucson	1
+Washington	1
+Wichita	1

@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>CRUD</title>
+        <script src = 'jq.js'></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                var index = 0;
+                $('#form').hide();
+                $('#remove').hide();
+                $('#create').click(function(){
+                    $('#form').show();
+                });
+                $('#sbmt').click(function(event){
+                        event.preventDefault();
+                        index++;
+                        var name = $('#name').val();
+                        var number = $('#number').val();
+                        var gender = $('input[name = "gender"]:checked').val();
+                        var row = '<tr>' + '<th>' + index + '</th>' + '<td>' + name + '</td>' + '<td>' + number + '</td>' + '<td>' + gender + '</td>' + '</tr>'
+                        $('#body').append(row);
+                        $('#form').hide();  
+                });
+            });
+        </script>
+        <style>
+            #buttons{
+                position: relative;
+                margin-top: 15%;
+                margin-left: 40%;
+            }
+        </style>
+    </head>
+    <body>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Number</th>
+                <th scope="col">Gender</th>
+              </tr>
+            </thead>
+            <tbody id = 'body'>
+
+            </tbody>
+          </table>
+        <div id = 'buttons'>
+            <button type="button" class="btn btn-outline-primary" id = 'create'>Create</button>
+            <button type="button" class="btn btn-outline-success" id = 'read'>Read</button>
+            <button type="button" class="btn btn-outline-warning" id = 'update'>Update</button>
+            <button type="button" class="btn btn-outline-danger" id = 'delete'>Delete</button>
+        </div>
+        <form id = 'form'>
+            <div class="form-group">
+              <label for="name"><b>Name:</b></label>
+              <input type="text" class="form-control" id="name">
+              <br>
+            </div>
+            <div class="form-group">
+              <label for="number"><b>Number:</b></label>
+              <input type="text" class="form-control" id="number">
+            </div>
+            <br><b>Gender:</b><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" value = 'male'>
+                    <label class="form-check-label" for="flexRadioDefault1">Male</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" value = 'female'>
+                    <label class="form-check-label" for="flexRadioDefault2">Female</label>
+                </div><br>
+            <button type="submit" class="btn btn-primary" id = 'sbmt'>Submit</button>
+        </form>
+        <form id = 'remove'>
+            <div class="form-group">
+                <label for="number"><b>Index for the row to delete:</b></label>
+                <input type="text" class="form-control" id="row"><br>
+                <button type="submit" class="btn btn-primary" id = 'del'>Submit</button>
+              </div>
+        </form>
+    </body>
+</html>

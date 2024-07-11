@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Checked Selecors</title>
+		<script type = "text/javascript" src = "jquery-3.7.1.min.js">
+		</script>
+		<script type = "text/javascript" language = "javascript">
+			$(document).ready(function(){
+				$('#btnSubmit').click(function(){
+					var result = $('input[type = "checkbox"]:checked');
+					if(result.length > 0){
+						var resultString = result.length + " checkboxe(s) checked<br/>"
+						result.each(function(){
+							resultString += $(this).val() + "<br/>"
+						});
+						$('#divResult').html(resultString);
+					}
+					else{
+						$('#divResult').html("No checkbox checked");
+					}
+				});
+			});
+		</script>	
+	</head>
+	<body>
+		Skills:
+		<input type="checkbox" name="skills" value = "JavaScript"/>JavaScript
+		<input type="checkbox" name="skills" value = "C#"/>C#
+		<input type="checkbox" name="skills" value = "MongoDB"/>MongoDB
+		<input type="checkbox" name="skills" value = "HTML"/>HTML
+		<br /><br />
+		<input id="btnSubmit" type="submit" value="submit"/>
+ 		<div id="divResult">
+ 		</div>
+	</body>	
+</html>

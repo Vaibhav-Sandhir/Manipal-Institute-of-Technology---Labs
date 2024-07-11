@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Q4</title>
+        <script src = 'jq.js'></script>
+        <script>
+            $(document).ready(function(){
+                var mobile = 0;
+                var laptop = 0;
+                var price = 0;
+                var quantity = 0;
+                $('#produce').click(function(){
+                    var brand = $('#company').val();
+                    if(brand ===  'hp'){
+                        mobile = 200;
+                        laptop = 2000;
+                    }
+                    if(brand === 'nokia'){
+                        mobile = 100;
+                        laptop = 1000;
+                    }
+                    quantity = $('#quantity').val();
+                    if($('#mobile').is(':checked')){
+                        price = price + (mobile * quantity);
+                    }
+                    if($('#laptop').is(':checked')){
+                        price = price + (laptop * quantity);
+                    }
+                    alert(price);
+                    price = 0;
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <select id = 'company'>
+            <option value = 'hp'>HP</option>
+            <option value = 'nokia'>Nokia</option>
+        </select><br><br>
+        <input id = 'mobile' type = 'checkbox'>Mobile<br>
+        <input id = 'laptop' type = 'checkbox'>Laptop<br><br>
+        Enter Quantity:<input id = 'quantity' type = 'text'><br><br>
+        <input id = 'produce' type = 'submit' value = 'Produce Bill'>
+    </body>
+</html>
+

@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Product</title>
+        <script type = "text/javascript" src = "jquery-3.7.1.min.js"></script>
+        <script type = "text/javascript" language = "javascript">
+            $(document).ready(function(){
+                $('#submit').click(function(){
+                   var brand = $('#brand').val();
+                   var mobile = 0;
+                   var laptop = 0;
+                   if(brand === 'nokia'){
+                    mobile = 300;
+                    laptop = 600;
+                   }
+                   else{
+                    mobile = 800;
+                    laptop = 1000;
+                   }
+                   var quantity = $('#quantity').val();
+                   var price = 0;
+                   if($('#mobile').is(':checked')){
+                    price = price + (quantity * mobile);
+                   }
+                   if($('#laptop').is(':checked')){
+                    price = price + (quantity * laptop);
+                   }
+                   alert("Total:" + price);
+                });
+            });
+        </script>
+        <style>
+            #brand{
+                width : 120px;
+                height : 40px;
+                font-size : 17px;
+            }
+        </style>
+    </head>
+    <body>
+        <select class = "option" id = "brand">
+            <option value = "apple">Apple</option>
+            <option value = "nokia">Nokia</option>
+        </select><br><br>
+        <input type = "checkbox" id = "mobile">Mobile<br>
+        <input type = "checkbox" id = "laptop">Laptop<br><br>
+        <label for = "quantity">Quantity: </label><br>
+        <input type = "text" name = "quantity" id = "quantity"><br><br>
+        <input type = "submit" value = "Produce Bill" id = "submit">
+    </body>
+</html>

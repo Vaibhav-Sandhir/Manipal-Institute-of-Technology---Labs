@@ -1,0 +1,7 @@
+list.append('h')
+len(list)
+list.count('h')
+del list[1]
+list.pop()
+list.insert(1, 'h')
+list.reverse()

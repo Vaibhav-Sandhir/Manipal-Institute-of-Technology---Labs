@@ -1,0 +1,18 @@
+import numpy as np
+
+a = np.arange(15).reshape(3, 5)
+print(a)
+print(a.shape)
+print(a.size)
+print(a.T)
+c = np.arange(24).reshape(2,3,4)
+print(c)
+print(c.shape)
+A = np.array( [[1,1],[0,1]] )
+B = np.array( [[2,0],[3,4]] )
+print(A*B)
+print(A.dot(B))
+b = np.arange(12).reshape(3,4)
+print(b)
+print(b.sum(axis=0))
+print(b.sum(axis=1))
